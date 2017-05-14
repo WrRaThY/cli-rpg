@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="RPG game" status="WARN">
+    <Properties>
+        <Property name="game_filename">logs/game.log</Property>
+        <Property name="pattern">%-5level %date %location: %msg %n</Property>
+    </Properties>
+
+    <Appenders>
+        <File name="GAME" append="false" createOnDemand="true" fileName="${game_filename}" immediateFlush="true">
+            <PatternLayout>
+                <Pattern>%-5level %date %location: %msg %n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="GAME" />
+        </Root>
+    </Loggers>
+
+</Configuration>
